@@ -81,4 +81,24 @@ print("\nAverage Profit by Category:")
 for cat, avg_profit in results.items():
     print(f"{cat}: ${avg_profit}")
 
+   
+
+def write_results_to_file(results_dict, output_filename):
+    """
+    Writes the average profit results to a plain text file.
+    Accepts a dictionary of results and a filename.
+    """
+    with open(output_filename, 'w', encoding='utf-8') as file:
+        file.write("Average Profit by Category (Sample Superstore Data)\n")
+        file.write("---------------------------------------------------\n")
+        for category, avg_profit in results_dict.items():
+            file.write(f"{category}: ${avg_profit}\n")
+
+    print(f"\nResults successfully written to '{output_filename}'")
+
+
+
+write_results_to_file(results, 'average_profit_results.txt')
+
+
 
